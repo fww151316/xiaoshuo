@@ -1,18 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    qwert
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+  },
+  created () { // 实例被创建之后执行代码
+      // this.qing()
+    },
+   methods: { // 方法
+  //  qing(){
+  //    axios.get("http://api.zhuishushenqi.com/cats/lv2/statistics").then(res =>{
+  //      console.log(res)
+  //    })
+  //  }
+      
+    },
 }
 </script>
 
