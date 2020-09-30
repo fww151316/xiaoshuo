@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    qwert
+    <router-view></router-view>
   </div>
 </template>
 
@@ -14,23 +14,12 @@ export default {
       // this.qing()
     },
    methods: { // 方法
-  //  qing(){
-  //    axios.get("http://api.zhuishushenqi.com/cats/lv2/statistics").then(res =>{
-  //      console.log(res)
-  //    })
-  //  }
+ 
       
     },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
