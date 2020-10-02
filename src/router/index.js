@@ -1,4 +1,4 @@
-import Vue from 'vue'
+﻿import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
@@ -27,11 +27,11 @@ const router = new VueRouter({
             component:() => import('../views/mine/index.vue')
         },
         {
-            path:'/book/:id',// 我的
+            path:'/book/:id',// 书的详细信息
             component:() => import('../views/book/index.vue')
         },
         {
-            path:'/hot',
+            path:'/hot',//热排行榜
            component:() =>import('../views/rank/hot/index.vue')
         },
         {
@@ -47,11 +47,11 @@ const router = new VueRouter({
            component:() =>import('../views/rank/latent/index.vue')
         },
         {
-            path:'/end',
+            path:'/end',//完结排行榜
            component:() =>import('../views/rank/end/index.vue')
         },
         {
-            path:'/list/:id',
+            path:'/list/:id',//章节列表
            component:() =>import('../views/list/index.vue')
         },
         {
