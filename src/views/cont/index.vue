@@ -27,7 +27,7 @@ export default {
     }
   },
   created () { // 实例被创建之后执行代码
-  
+      // this.getcont()
     },
   computed: { // 计算属性
 
@@ -36,7 +36,12 @@ export default {
 
     },
   methods: { // 方法
-   
+        // getcont(){
+        //   console.log(this.$route)
+        //   this.$http.get("/chapter/5817f1161bb2ca566b0a5973?cv=1481275033588").then(res => {
+        //     console.log(res)
+        //   })
+        // }
 
     },
   mounted () { // 页面进入时加载内容

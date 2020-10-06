@@ -9,7 +9,7 @@
       </mt-header>
     </header>
 
-      <mt-search v-model="value" placeholder="搜索" @click.native="scout" @blur.native="scout" ></mt-search>
+      <mt-search v-model="value1" @click.native="scout" @blur.native="scout" ></mt-search>
       
       <div>
           <mt-cell v-for="item in list" :key="item._id" :title="item.title" @click.native="gobook(item._id)"></mt-cell>
@@ -25,7 +25,7 @@ export default {
   name: 'index',
   data () {
     return {
-        value:'',
+        value1:'',
         list:[]
     }
   },
@@ -40,7 +40,7 @@ export default {
     },
   methods: { // 方法
     scout(){
-        this.$http.get('/book/fuzzy-search?query='+ this.value).then(res =>{
+        this.$http.get('/book/fuzzy-search?query='+ this.value1).then(res =>{
             console.log(res.books)
             this.list = res.books
         })

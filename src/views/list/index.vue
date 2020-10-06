@@ -10,7 +10,7 @@
     </header>
     <div class="kong"></div>
     <ul v-infinite-scroll="getlist" infinite-scroll-disabled="loading" infinite-scroll-distance="20">
-      <mt-cell :title="item.title" v-for="item in list" :key="item._id" @click.native="gocont"></mt-cell>
+      <mt-cell :title="item.title" v-for="item in list" :key="item._id" @click.native="gocont(item.link)"></mt-cell>
     </ul>
   </div>
 </template>
@@ -44,10 +44,9 @@ export default {
     // 方法
     getlist() {
       this.loading = true;
-      this.$http
-        .get("/atoc/" + this.$route.params.id + "?view=chapters")
-        .then(res => {
+      this.$http.get("/atoc/" + this.$route.params.id + "?view=chapters").then(res => {
           this.s = res.chapters.length
+          // console.log(res.chapters[2].link.split('/')[4])
           for(var i =this.t; i<this.f;i++){
               this.list.push(res.chapters[i])
           }
@@ -61,10 +60,10 @@ export default {
         });
     },
 
-    gocont() {
-      console.log(this.link);
+    gocont(id) {
+      // console.log(this.link);
       this.$router.push({
-        path: "/cont"
+        path: "/cont/"+id.split('/')[4]
       });
     }
   },

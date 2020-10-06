@@ -2,8 +2,7 @@
 <template>
   <div class="index">
     <Header></Header>
-
-    <mt-search v-model="value" cancel-text="搜索" placeholder="搜索" @click.native="goscout"></mt-search>
+    <mt-search v-model="value" @click.native="goscout"></mt-search>
     <!-- 轮播 -->
     <mt-swipe :auto="4000">
       <mt-swipe-item>
@@ -27,11 +26,11 @@
     </mt-swipe>
     <!-- 分类 -->
     <div class="sort">
-      <mt-button size="small">分类</mt-button>
-      <mt-button size="small">分类</mt-button>
-      <mt-button size="small">分类</mt-button>
-      <mt-button size="small">分类</mt-button>
-      <mt-button size="small">分类</mt-button>
+      <mt-button size="small" @click.native="go('玄幻')">玄幻</mt-button>
+      <mt-button size="small" @click.native="go('奇幻')">奇幻</mt-button>
+      <mt-button size="small" @click.native="go('武侠')">武侠</mt-button>
+      <mt-button size="small" @click.native="go('仙侠')">仙侠</mt-button>
+      <mt-button size="small" @click.native="go('历史')">历史</mt-button>
     </div>
 
     <!-- 推荐 -->
@@ -118,7 +117,13 @@ export default {
       this.$router.push({
         path:'/scout'
       })
+    },
+    go(id){
+      this.$router.push({
+        path:'/sort/'+id
+      })
     }
+
   },
   mounted() {
     // 页面进入时加载内容
@@ -147,8 +152,9 @@ export default {
   align-items: center;
 }
 .mint-button {
-  background: rgb(161, 135, 231);
+  background: rgb(147, 119, 226);
   color: #fff;
+  font-weight: 900;
 }
 .recom {
   h3 {

@@ -55,12 +55,16 @@ const router = new VueRouter({
            component:() =>import('../views/list/index.vue')
         },
         {
-            path:'/cont',
+            path:'/cont/:id',
            component:() =>import('../views/cont/index.vue')
         },
         {
             path:'/scout',
            component:() =>import('../views/scout/index.vue')
+        },
+        {
+            path:'/sort/:id',
+           component:() =>import('../views/sort/index.vue')
         }
     ]
 })
